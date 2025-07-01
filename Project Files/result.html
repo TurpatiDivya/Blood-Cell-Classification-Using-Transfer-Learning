@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <style>
+        body { background-color: #fafafa; }
+        .container { max-width: 500px; margin-top: 80px; }
+        .card { box-shadow: 0 2px 12px rgba(0,0,0,0.1); }
+        .blood-cell-img { max-width: 100%; height: auto; border-radius: 12px; }
+        h2 { color: #272963; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card p-4 text-center">
+            <h2>Classification Result</h2>
+            <img src="data:image/png;base64,{{ img_data }}" class="blood-cell-img my-3" alt="Uploaded Image"/>
+            <hr>
+            <h4>Predicted Class:</h4>
+            <span class="badge bg-success fs-5">{{ class_label }}</span>
+            <br><br>
+            <a href="{{ url_for('upload_file') }}" class="btn btn-outline-primary">Classify Another Image</a>
+        </div>
+    </div>
+</body>
+</html>
